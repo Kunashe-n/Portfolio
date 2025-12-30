@@ -1,146 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunashe Ndokanga | MERL Tech Specialist | Quantitative Analyst | Python &amp; PostgreSQL Developer</title>
+    <title>Kunashe N. | M&amp;E Specialist &amp; Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#0f172a',
+                        'brand-blue': '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        /* Floating Animation for Profile Picture */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .profile-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Subtle Gradient Glow behind image */
+        .image-glow {
+            position: relative;
+        }
+        .image-glow::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background: linear-gradient(180deg, rgba(59, 130, 246, 0.5) 0%, rgba(147, 51, 234, 0.5) 100%);
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-blue selection:text-white">
 
-    <nav class="flex justify-between items-center py-6 px-8 max-w-6xl mx-auto">
-        <div class="text-xl font-bold tracking-tight">Kunashe Ndokanga</div>
-        <div class="space-x-6 text-sm font-medium text-gray-600">
-            <a href="#work" class="hover:text-black transition">Work</a>
-            <a href="#about" class="hover:text-black transition">About</a>
-            <a href="#contact" class="hover:text-black transition">Contact</a>
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-gray-200/50 bg-white/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between px-6 py-4">
+            <a href="#" class="text-2xl font-serif font-bold text-brand-dark tracking-tight">Kunashe N.</a>
+            <div class="space-x-8 text-sm font-semibold tracking-wide text-slate-500">
+                <a href="#about" class="hover:text-brand-blue transition-colors">ABOUT</a>
+                <a href="#work" class="hover:text-brand-blue transition-colors">WORK</a>
+                <a href="#contact" class="hover:text-brand-blue transition-colors">CONTACT</a>
+            </div>
         </div>
     </nav>
 
-    <header class="max-w-6xl mx-auto px-8 py-20 md:py-32 flex flex-col-reverse md:flex-row items-center">
-        <div class="w-full md:w-1/2 md:pr-16 mt-12 md:mt-0">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-                MERL Tech Specialist | Quantitative Analyst | Python &amp; PostgreSQL Developer
-            </h1>
-            <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
-                Bridging the gap between complex data and actionable software solutions. I specialize in building systems that make Monitoring &amp; Evaluation efficient, reliable, and insightful.
-            </p>
-            <div class="flex space-x-4">
-                <a href="#contact" class="inline-block bg-black text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-800 transition">
-                    Get in Touch
-                </a>
-                <a href="#work" class="inline-block bg-gray-100 text-black font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition">
-                    See My Work
-                </a>
+    <header class="min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="order-2 md:order-1 space-y-8">
+                <div class="inline-block px-4 py-1 rounded-full bg-blue-50 border border-blue-100 text-brand-blue text-xs font-bold tracking-widest uppercase">
+                    Available for hire
+                </div>
+                <h1 class="text-5xl md:text-7xl font-serif font-bold text-brand-dark leading-[1.1]">
+                    Bridging Data & <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-purple-600">Development.</span>
+                </h1>
+                <p class="text-xl text-slate-600 leading-relaxed max-w-lg">
+                    I bridge the gap between complex data and actionable software. While most analysts only interpret data, I build the custom systems that collect, clean, and visualize it.
+                </p>
+                <div class="flex gap-4 pt-4">
+                    <a href="#contact" class="px-8 py-4 bg-brand-dark text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        Get in Touch
+                    </a>
+                    <a href="#work" class="px-8 py-4 bg-white border border-gray-200 text-brand-dark rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                        View Portfolio
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="w-full md:w-1/2 flex justify-center md:justify-end">
-            <img src="/static/images/profile.jpg" 
-                 alt="Kunashe Ndokanga" 
-                 class="w-4/5 md:w-full max-w-md rounded-2xl shadow-xl object-cover grayscale hover:grayscale-0 transition duration-500">
+
+            <div class="order-1 md:order-2 flex justify-center md:justify-end relative image-glow">
+                <div class="relative profile-float">
+                    <div class="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl w-72 md:w-96 aspect-[3/4]">
+                        <img src="static/images/profile.jpg" 
+                             alt="Kunashe N." 
+                             class="w-full h-full object-cover transform hover:scale-105 transition duration-700 ease-out">
+                    </div>
+                    
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-green-100 p-2 rounded-full">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-bold uppercase">Focus</p>
+                            <p class="font-serif font-bold text-brand-dark">M&E Systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
 
-    <section id="about" class="bg-gray-50 py-24 px-8">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8">About Me</h2>
-            <p class="text-lg text-gray-700 leading-relaxed mb-12">
-                With a strong foundation in **Corporate Governance** and **Quantitative Analysis**, I noticed a critical need for better technological tools in the M&E sector. This led me to transition into software development. Today, I leverage my unique dual expertise to design and build custom web platforms (using **Flask & PostgreSQL**) and automated analysis tools that solve real-world data challenges.
-            </p>
-            
-            <h3 class="text-xl font-semibold mb-6">Core Expertise</h3>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <section id="about" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -skew-x-12 z-0"></div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-12 text-brand-dark">The Technical M&E Specialist</h2>
+            <div class="prose prose-lg text-slate-600 mb-16 leading-8">
                 
-                <li class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span class="text-gray-700 font-medium">Full-Stack Web Development (Flask, Python)</span>
-                </li>
+        <p>In the world of <strong>Corporate Governance</strong> and <strong>Monitoring & Evaluation (M&E)</strong>, data integrity is everything. Yet, too many organizations rely on outdated, manual tools.</p>
+        <br>
+        <p>I realized that to truly improve governance in Zimbabwe, we need better systems. I transitioned into <strong>Full-Stack Development</strong> to build those systems. Today, I combine my background in quantitative analysis with Python/Flask development to create bespoke Survey Platforms, Automated Trading Bots, and Data Dashboards.</p>
+        
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
                 
-                <li class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span class="text-gray-700 font-medium">Database Design &amp; Management (PostgreSQL)</span>
-                </li>
+                <div class="group p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all duration-300">
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-brand-blue group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800">M&amp;E System Architecture</h3>
+                </div>
                 
-                <li class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span class="text-gray-700 font-medium">M&amp;E Framework Design &amp; Digitization</span>
-                </li>
+                <div class="group p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all duration-300">
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-brand-blue group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800">Python (Flask) Development</h3>
+                </div>
                 
-                <li class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span class="text-gray-700 font-medium">Quantitative Data Analysis &amp; Visualization</span>
-                </li>
+                <div class="group p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all duration-300">
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-brand-blue group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800">PostgreSQL Database Design</h3>
+                </div>
                 
-                <li class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span class="text-gray-700 font-medium">Automated Reporting Systems</span>
-                </li>
+                <div class="group p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all duration-300">
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-brand-blue group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800">Quantitative Analysis</h3>
+                </div>
                 
-            </ul>
+                <div class="group p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all duration-300">
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-brand-blue group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800">Automated Reporting</h3>
+                </div>
+                
+                <div class="group p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all duration-300">
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-brand-blue group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800">Corporate Governance</h3>
+                </div>
+                
+            </div>
         </div>
     </section>
 
-    <section id="work" class="py-24 px-8 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-12 pb-4 border-b">Selected Work</h2>
-        <div class="grid md:grid-cols-2 gap-12">
-            
-            <div class="group">
-                <a href="#" class="block">
-                    <h3 class="text-2xl font-bold mb-2 group-hover:text-blue-700 transition">SurveyZim Platform</h3>
-                    <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-4">Lead Developer &amp; M&amp;E Specialist</p>
-                    <p class="text-gray-700 leading-relaxed mb-4">A comprehensive, end-to-end survey management platform built for resource-constrained environments. Features include offline data collection, automated cleaning pipelines, and a real-time dashboard for stakeholder reporting.</p>
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <span class="px-3 py-1 bg-gray-100 text-xs font-medium text-gray-600 rounded-full">Flask</span>
-                        
-                        <span class="px-3 py-1 bg-gray-100 text-xs font-medium text-gray-600 rounded-full">PostgreSQL</span>
-                        
-                        <span class="px-3 py-1 bg-gray-100 text-xs font-medium text-gray-600 rounded-full">DataViz</span>
-                        
-                    </div>
-                </a>
+    <section id="work" class="py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <span class="text-brand-blue font-bold tracking-widest text-sm uppercase">Selected Projects</span>
+                    <h2 class="text-4xl font-serif font-bold text-brand-dark mt-2">Recent Work</h2>
+                </div>
             </div>
-            
-            <div class="group">
-                <a href="#" class="block">
-                    <h3 class="text-2xl font-bold mb-2 group-hover:text-blue-700 transition">Algorithmic Trading Bot</h3>
-                    <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-4">Quantitative Developer</p>
-                    <p class="text-gray-700 leading-relaxed mb-4">Developed an automated trading system for the GBP/USD currency pair. The bot utilizes technical indicators (MACD, RSI) to execute short-term trades, demonstrating strong capability in logic programming and real-time data processing.</p>
-                    <div class="flex flex-wrap gap-2">
-                        
-                        <span class="px-3 py-1 bg-gray-100 text-xs font-medium text-gray-600 rounded-full">Python</span>
-                        
-                        <span class="px-3 py-1 bg-gray-100 text-xs font-medium text-gray-600 rounded-full">Pandas</span>
-                        
-                        <span class="px-3 py-1 bg-gray-100 text-xs font-medium text-gray-600 rounded-full">Automation</span>
-                        
+
+            <div class="grid md:grid-cols-2 gap-10">
+                
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100 flex flex-col h-full">
+                    <div class="p-8 flex-1">
+                        <div class="flex gap-2 mb-6">
+                            
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-md group-hover:bg-brand-blue group-hover:text-white transition-colors">Flask</span>
+                            
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-md group-hover:bg-brand-blue group-hover:text-white transition-colors">PostgreSQL</span>
+                            
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-md group-hover:bg-brand-blue group-hover:text-white transition-colors">System Design</span>
+                            
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-3 text-slate-800 group-hover:text-brand-blue transition-colors">
+                            <a href="#" class="focus:outline-none">
+                                <span class="absolute inset-0" aria-hidden="true"></span>
+                                SurveyZim Platform
+                            </a>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">A robust survey distribution platform designed for the Zimbabwean context. I handled the end-to-end development using Flask and PostgreSQL, focusing on offline data capability and intuitive UI for enumerators.</p>
                     </div>
-                </a>
+                    <div class="px-8 pb-8 pt-0 mt-auto">
+                        <span class="text-sm font-semibold text-brand-blue flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                            View Project 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </article>
+                
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100 flex flex-col h-full">
+                    <div class="p-8 flex-1">
+                        <div class="flex gap-2 mb-6">
+                            
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-md group-hover:bg-brand-blue group-hover:text-white transition-colors">Python</span>
+                            
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-md group-hover:bg-brand-blue group-hover:text-white transition-colors">Pandas</span>
+                            
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-md group-hover:bg-brand-blue group-hover:text-white transition-colors">Automation</span>
+                            
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-3 text-slate-800 group-hover:text-brand-blue transition-colors">
+                            <a href="#" class="focus:outline-none">
+                                <span class="absolute inset-0" aria-hidden="true"></span>
+                                Algorithmic Trading Bot
+                            </a>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">An automated trading system for GBP/USD. It uses real-time data to calculate MACD and RSI indicators, executing trades automatically based on pre-defined risk parameters.</p>
+                    </div>
+                    <div class="px-8 pb-8 pt-0 mt-auto">
+                        <span class="text-sm font-semibold text-brand-blue flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                            View Project 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </article>
+                
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100 flex flex-col h-full">
+                    <div class="p-8 flex-1">
+                        <div class="flex gap-2 mb-6">
+                            
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-md group-hover:bg-brand-blue group-hover:text-white transition-colors">Web App</span>
+                            
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-md group-hover:bg-brand-blue group-hover:text-white transition-colors">Branding</span>
+                            
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-md group-hover:bg-brand-blue group-hover:text-white transition-colors">UI/UX</span>
+                            
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-3 text-slate-800 group-hover:text-brand-blue transition-colors">
+                            <a href="#" class="focus:outline-none">
+                                <span class="absolute inset-0" aria-hidden="true"></span>
+                                CertusScript
+                            </a>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">A dedicated transcription web platform. I designed the brand identity (logo) and built the web application to streamline the transcription workflow for local professionals.</p>
+                    </div>
+                    <div class="px-8 pb-8 pt-0 mt-auto">
+                        <span class="text-sm font-semibold text-brand-blue flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                            View Project 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </article>
+                
             </div>
-            
         </div>
     </section>
 
-    <footer id="contact" class="bg-black text-white py-24 px-8 text-center">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8">Let's Build Something Impactful</h2>
-            <p class="text-xl text-gray-400 mb-12">I'm always open to discussing new projects, opportunities in M&E systems, or technical collaborations.</p>
-            <a href="mailto:kunashendokanga04@gmail.com" class="inline-block border-2 border-white text-white font-semibold py-3 px-10 rounded-full hover:bg-white hover:text-black transition">
-                Say Hello
+    <footer id="contact" class="bg-brand-dark text-white py-24 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+             <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-blue rounded-full blur-3xl"></div>
+             <div class="absolute bottom-0 left-0 w-72 h-72 bg-purple-600 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold mb-8">Ready to start a project?</h2>
+            <p class="text-xl text-slate-300 mb-12">I am currently available for freelance work and full-time opportunities in M&E Systems Development.</p>
+            
+            <a href="mailto:kunashendokanga04@gmail.com" class="inline-flex items-center gap-3 bg-white text-brand-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-blue hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                Send me an Email
             </a>
-            
-            <div class="mt-16 flex justify-center text-gray-400">
-                <a href="https://www.linkedin.com/in/kunashe-ndokanga-5a1539253?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6w4x0TXwSrmcg3cx84qECQ%3D%3D" class="hover:text-white transition flex items-center">
-                    <span class="border-b border-transparent hover:border-white pb-1">Connect on LinkedIn</span>
-                    <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+
+            <div class="mt-16 pt-16 border-t border-gray-800 flex justify-center gap-8">
+                <a href="https://www.linkedin.com/in/kunashe-ndokanga/" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                    <span class="uppercase tracking-widest text-xs font-bold">LinkedIn</span>
                 </a>
             </div>
-            
-            <p class="mt-12 text-sm text-gray-600">© 2025 Kunashe Ndokanga. All rights reserved.</p>
+            <p class="mt-8 text-gray-500 text-sm">&copy; 2025 Kunashe N.. Designed with Flask & Tailwind.</p>
         </div>
     </footer>
 
