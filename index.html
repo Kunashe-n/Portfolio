@@ -21,7 +21,7 @@
                     },
                     colors: {
                         'brand-dark': '#0f172a',
-                        'brand-blue': '#2563eb', /* Slightly darker blue for better contrast */
+                        'brand-blue': '#2563eb',
                     }
                 }
             }
@@ -29,7 +29,6 @@
     </script>
 
     <style>
-        /* Floating Animation */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
@@ -39,10 +38,10 @@
             animation: float 6s ease-in-out infinite;
         }
         
-        /* Reduced Glare Glow */
         .image-glow {
             position: relative;
         }
+        /* Moved z-index to -1 to ensure it stays BEHIND everything */
         .image-glow::after {
             content: '';
             position: absolute;
@@ -52,9 +51,8 @@
             height: 80%;
             background: linear-gradient(180deg, rgba(37, 99, 235, 0.4) 0%, rgba(147, 51, 234, 0.4) 100%);
             filter: blur(40px);
-            z-index: -1;
+            z-index: -1; 
             opacity: 0.5;
-            transition: opacity 0.3s;
         }
     </style>
 </head>
@@ -71,15 +69,16 @@
         </div>
     </nav>
 
-    <header class="min-h-screen flex items-center pt-20">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <header class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center w-full">
             
-            <div class="order-2 md:order-1 space-y-8">
-                <a href="https://wa.me/263779951152" target="_blank" class="inline-block group">
-                    <div class="px-4 py-1 rounded-full bg-white border border-blue-200 text-brand-blue text-xs font-bold tracking-widest uppercase group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300 flex items-center gap-2 cursor-pointer shadow-sm">
+            <div class="order-2 md:order-1 space-y-8 relative z-10">
+                
+                <a href="https://wa.me/263779951152" target="_blank" class="inline-block group cursor-pointer relative z-20">
+                    <div class="px-4 py-1 rounded-full bg-white border border-blue-200 text-brand-blue text-xs font-bold tracking-widest uppercase group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300 flex items-center gap-2 shadow-sm">
                         <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500 group-hover:bg-white"></span>
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500 group-hover:bg-white"></span>
                         </span>
                         Available for hire
                     </div>
@@ -92,7 +91,8 @@
                 <p class="text-xl text-slate-700 leading-relaxed max-w-lg font-medium">
                     I bridge the gap between complex data and actionable software. While traditional analyses only interpret data, I build the custom systems that collect, clean, and visualize it.
                 </p>
-                <div class="flex gap-4 pt-4">
+                
+                <div class="flex gap-4 pt-4 relative z-20">
                     <a href="#contact" class="px-8 py-4 bg-brand-dark text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                         Get in Touch
                     </a>
@@ -325,7 +325,7 @@
             </a>
 
             <div class="mt-16 pt-16 border-t border-gray-800 flex justify-center gap-8">
-                <a href="https://www.linkedin.com/in/kunashe-ndokanga-5a1539253?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6w4x0TXwSrmcg3cx84qECQ%3D%3D" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                <a href="https://www.linkedin.com/in/kunashe-ndokanga/" target="_blank" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
                     <span class="uppercase tracking-widest text-xs font-bold">LinkedIn</span>
                 </a>
             </div>
